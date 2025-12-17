@@ -1,0 +1,13 @@
+{
+  "doc_id": "78e29d87ef986ad6f90818875ea4b04f",
+  "source": "pytorch_docs",
+  "title": "PyTorch Governance | Build + CI \u2014 PyTorch 2.9 documentation",
+  "text": "\n## PyTorch Governance | Build + CI#\n\nCreated On: Aug 31, 2022 | Last Updated On: Apr 16, 2025\n\n## How to Add a New Maintainer#\n\nFor the person to be a maintainer, a person needs to:\nLand at least six commits to the related part of the PyTorch repository\nAt least one of these commits must be submitted in the last six months\nTo add a qualified person to the maintainers\u2019 list, please create\na PR that adds a person to thepersons of interestspage andmerge_rulesfiles. Current maintainers will cast their votes of\nsupport. Decision criteria for approving the PR:\nNot earlier than two business days passed before merging (ensure the majority of the contributors have seen it)\nPR has the correct label (module: ci)\nThere are no objections from the current maintainers\nThere are at least three netthumbs upfrom current maintainers (or all maintainers votethumbs upwhen the module has less than 3 maintainers).",
+  "url": "https://pytorch.org/docs/stable/community/build_ci_governance.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

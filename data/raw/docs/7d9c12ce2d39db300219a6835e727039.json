@@ -1,0 +1,13 @@
+{
+  "doc_id": "7d9c12ce2d39db300219a6835e727039",
+  "source": "pytorch_docs",
+  "title": "torch.config \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.config#\n\nCreated On: Apr 09, 2019 | Last Updated On: Jun 13, 2025\nReturn a human-readable string with descriptions of the\nconfiguration of PyTorch.\nstr\nReturns detailed string with parallelization settings\nstr",
+  "url": "https://pytorch.org/docs/stable/config_mod.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

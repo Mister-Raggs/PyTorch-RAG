@@ -1,0 +1,13 @@
+{
+  "doc_id": "a2dfdd850962df4b4d170670c5192f00",
+  "source": "pytorch_docs",
+  "title": "Subprocess Handling \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Subprocess Handling#\n\nCreated On: Mar 08, 2024 | Last Updated On: Mar 08, 2024\n\n## Retrieve SubprocessHandler#\n\nSubprocessHandler\n\n## SubprocessHandler#\n\nConvenience wrapper around python\u2019ssubprocess.Popen. Keeps track of\nmeta-objects associated to the process (e.g. stdout and stderr redirect fds).\nsubprocess.Popen",
+  "url": "https://pytorch.org/docs/stable/elastic/subprocess_handler.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

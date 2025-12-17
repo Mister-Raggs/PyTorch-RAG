@@ -1,0 +1,13 @@
+{
+  "doc_id": "f3941a62bf5106cf0187bcc988169dc4",
+  "source": "pytorch_docs",
+  "title": "Working with Graph Breaks \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Working with Graph Breaks#\n\nCreated On: Jul 28, 2025 | Last Updated On: Jul 28, 2025\nAs you might remember from (Dynamo Core Concepts)[programming_model.dynamo_core_concepts] that Dynamo performs a graph break when\nit encounters code that can\u2019t be traced. In the defaulttorch.compilesettings, Dynamo compiles the FX graph\nthat has been determined up to that point, executes the unsupported code in regular Python, and then resumes tracing.\ntorch.compile\nGraph breaks enable Dynamo to trace through arbitrary Python code and carve out functional\nsubgraphs that can each be individually optimized.\nHowever, graph breaks may cause unexpected slowness intorch.compile.\nIf you\u2019re not seeing the expected speedups, we recommend checking for graph breaks and removing them.\ntorch.compile\nThe following sections outline strategies for addressing graph breaks.\nfullgraph=True\ntorch._dynamo.nonstrict_trace\nfullgraph=False\ncompile(model)\nmodel.compile()\nerror_on_graph_break\nerror_on_graph_break(False)\nerror_on_graph_break(True)\nerror_on_graph_break\nfullgraph\nfullgraph=True/False\nerror_on_graph_break",
+  "url": "https://pytorch.org/docs/stable/compile/programming_model.graph_breaks_index.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

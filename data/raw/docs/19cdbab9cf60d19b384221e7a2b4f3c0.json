@@ -1,0 +1,13 @@
+{
+  "doc_id": "19cdbab9cf60d19b384221e7a2b4f3c0",
+  "source": "pytorch_docs",
+  "title": "torch.jit.optimize_for_inference \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.jit.optimize_for_inference#\n\nPerform a set of optimization passes to optimize a model for the purposes of inference.\nIf the model is not already frozen, optimize_for_inference\nwill invoketorch.jit.freezeautomatically.\nIn addition to generic optimizations that should speed up your model regardless\nof environment, prepare for inference will also bake in build specific settings\nsuch as the presence of CUDNN or MKLDNN, and may in the future make transformations\nwhich speed things up on one machine but slow things down on another. Accordingly,\nserialization is not implemented following invokingoptimize_for_inferenceand\nis not guaranteed.\nThis is still in prototype, and may have the potential to slow down your model.\nPrimary use cases that have been targeted so far have been vision models on cpu\nand gpu to a lesser extent.\nExample (optimizing a module with Conv->Batchnorm):\n\n```python\nimport torch\n\nin_channels, out_channels = 3, 32\nconv = torch.nn.Conv2d(\n    in_channels, out_channels, kernel_size=3, stride=2, bias=True\n)\nbn = torch.nn.BatchNorm2d(out_channels, eps=0.001)\nmod = torch.nn.Sequential(conv, bn)\nfrozen_mod = torch.jit.optimize_for_inference(torch.jit.script(mod.eval()))\nassert \"batch_norm\" not in str(frozen_mod.graph)\n# if built with MKLDNN, convolution will be run with MKLDNN weights\nassert \"MKLDNN\" in frozen_mod.graph\n\n```\n\nScriptModule",
+  "url": "https://pytorch.org/docs/stable/generated/torch.jit.optimize_for_inference.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

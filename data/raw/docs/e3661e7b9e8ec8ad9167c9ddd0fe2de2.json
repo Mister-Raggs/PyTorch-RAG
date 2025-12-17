@@ -1,0 +1,13 @@
+{
+  "doc_id": "e3661e7b9e8ec8ad9167c9ddd0fe2de2",
+  "source": "pytorch_docs",
+  "title": "torch.utils.deterministic \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.utils.deterministic#\n\nCreated On: Oct 26, 2023 | Last Updated On: Jun 06, 2025\nAboolthat, if True, causes uninitialized memory to be filled with\na known value whentorch.use_deterministic_algorithms()is set toTrue. Floating point and complex values are set to NaN, and integer\nvalues are set to the maximum value.\nbool\ntorch.use_deterministic_algorithms()\nTrue\nDefault:True\nTrue\nFilling uninitialized memory is detrimental to performance. So if your\nprogram is valid and does not use uninitialized memory as the input to an\noperation, then this setting can be turned off for better performance and\nstill be deterministic.\nThe following operations will fill uninitialized memory when this setting is\nturned on:\ntorch.Tensor.resize_()when called with a tensor that is not\nquantized\ntorch.Tensor.resize_()\ntorch.empty()\ntorch.empty()\ntorch.empty_strided()\ntorch.empty_strided()\ntorch.empty_permuted()\ntorch.empty_permuted()\ntorch.empty_like()\ntorch.empty_like()",
+  "url": "https://pytorch.org/docs/stable/deterministic.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

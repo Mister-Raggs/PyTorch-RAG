@@ -1,0 +1,13 @@
+{
+  "doc_id": "36a510f52504d95672594594a384600f",
+  "source": "pytorch_docs",
+  "title": "torch.compiler.cudagraph_mark_step_begin \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.compiler.cudagraph_mark_step_begin#\n\nIndicates that a new iteration of inference or training is about to begin.\nCUDA Graphs will free tensors of a prior iteration. A new iteration is started on each invocation of\ntorch.compile, so long as there is not a pending backward that has not been called.\nIf that heuristic is wrong, such as in the following example, manually mark it with this api.\n\n```python\n@torch.compile(mode=\"reduce-overhead\")\ndef rand_foo():\n    return torch.rand([4], device=\"cuda\")\n\n\nfor _ in range(5):\n    torch.compiler.cudagraph_mark_step_begin()\n    rand_foo() + rand_foo()\n\n```\n\nFor more details, seetorch.compiler_cudagraph_trees",
+  "url": "https://pytorch.org/docs/stable/generated/torch.compiler.cudagraph_mark_step_begin.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

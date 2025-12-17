@@ -1,0 +1,13 @@
+{
+  "doc_id": "bbfac55e5e22c97a39b6c78ab74f50f4",
+  "source": "pytorch_docs",
+  "title": "python.context-manager \u2014 PyTorch 2.9 documentation",
+  "text": "\n## python.context-manager#\n\n\n## null_context_manager#\n\nNote\nTags:python.context-manager\nSupport Level: SUPPORTED\nOriginal source code:\n\n```python\n# mypy: allow-untyped-defs\nimport contextlib\n\nimport torch\n\nclass NullContextManager(torch.nn.Module):\n    \"\"\"\n    Null context manager in Python will be traced out.\n    \"\"\"\n\n    def forward(self, x):\n        \"\"\"\n        Null context manager in Python will be traced out.\n        \"\"\"\n        ctx = contextlib.nullcontext()\n        with ctx:\n            return x.sin() + x.cos()\n\nexample_args = (torch.randn(3, 2),)\ntags = {\"python.context-manager\"}\nmodel = NullContextManager()\n\n\ntorch.export.export(model, example_args)\n\n```\n\nResult:\n\n```python\nExportedProgram:\n    class GraphModule(torch.nn.Module):\n        def forward(self, x: \"f32[3, 2]\"):\n                 sin: \"f32[3, 2]\" = torch.ops.aten.sin.default(x)\n            cos: \"f32[3, 2]\" = torch.ops.aten.cos.default(x);  x = None\n            add: \"f32[3, 2]\" = torch.ops.aten.add.Tensor(sin, cos);  sin = cos = None\n            return (add,)\n\nGraph signature:\n    # inputs\n    x: USER_INPUT\n\n    # outputs\n    add: USER_OUTPUT\n\nRange constraints: {}\n\n```\n",
+  "url": "https://pytorch.org/docs/stable/generated/exportdb/python.context-manager.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

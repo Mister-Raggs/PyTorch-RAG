@@ -1,0 +1,13 @@
+{
+  "doc_id": "a4b71f88a8cfcfb40fdcbfdae1e4b924",
+  "source": "pytorch_docs",
+  "title": "User Guide \u2014 PyTorch 2.9 documentation",
+  "text": "\n## User Guide#\n\nCreated On: Aug 13, 2025 | Last Updated On: Sep 02, 2025\nPyTorch provides a flexible and efficient platform for building deep\nlearning models, offering dynamic computation graphs and a rich\necosystem of tools and libraries. This guide will help you harness the power\nof PyTorch to create and deploy machine learning models effectively.\nNote\nThis guide is a work in progress.\nIntroduction\nCore Concepts\nDeveloper Notes\nAccelerator Integration",
+  "url": "https://pytorch.org/docs/stable/user_guide/index.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

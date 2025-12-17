@@ -1,0 +1,13 @@
+{
+  "doc_id": "034ee2813b2c2c76b42e084892430fc1",
+  "source": "pytorch_docs",
+  "title": "torch.compiler.config \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.compiler.config#\n\nCreated On: Nov 01, 2024 | Last Updated On: Jun 11, 2025\nThis is the top-level configuration module for the compiler, containing\ncross-cutting configuration options that affect all parts of the compiler\nstack.\nYou may also be interested in the per-component configuration modules, which\ncontain configuration options that affect only a specific part of the compiler:\ntorch._dynamo.config\ntorch._dynamo.config\ntorch._inductor.config\ntorch._inductor.config\ntorch._functorch.config\ntorch._functorch.config\ntorch.fx.experimental.config\ntorch.fx.experimental.config\nSemantically, this should be an identifier that uniquely identifies, e.g., a\ntraining job.  You might have multiple attempts of the same job, e.g., if it was\npreempted or needed to be restarted, but each attempt should be running\nsubstantially the same workload with the same distributed topology.  You can\nset this by environment variable withTORCH_COMPILE_JOB_ID.\nTORCH_COMPILE_JOB_ID\nOperationally, this controls the effect of profile-guided optimization related\npersistent state.  PGO state can affect how we perform compilation across\nmultiple invocations of PyTorch, e.g., the first time you run your program we\nmay compile twice as we discover what inputs are dynamic, and then PGO will\nsave this state so subsequent invocations only need to compile once, because\nthey remember it is dynamic.  This profile information, however, is sensitive\nto what workload you are running, so we require you to tell us that two jobs\narerelated(i.e., are the same workload) before we are willing to reuse\nthis information.  Notably, PGO does nothing (even if explicitly enabled)\nunless a validjob_idis available.  In some situations, PyTorch can\nconfigured to automatically compute ajob_idbased on the environment it\nis running in.\njob_id\njob_id\nProfiles are always collected on a per rank basis, so different ranks may have\ndifferent profiles.  If you know your workload is truly SPMD, you can run withtorch._dynamo.config.enable_compiler_collectivesto ensure nodes get\nconsistent profiles across all ranks.\ntorch._dynamo.config.enable_compiler_collectives",
+  "url": "https://pytorch.org/docs/stable/torch.compiler.config.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

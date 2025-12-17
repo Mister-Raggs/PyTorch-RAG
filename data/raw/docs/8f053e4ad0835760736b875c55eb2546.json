@@ -1,0 +1,13 @@
+{
+  "doc_id": "8f053e4ad0835760736b875c55eb2546",
+  "source": "pytorch_docs",
+  "title": "Where to apply torch.compile? \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Where to apply torch.compile?#\n\nCreated On: Jul 28, 2025 | Last Updated On: Jul 28, 2025\nWe recommend applyingtorch.compileto the highest-level function that doesn\u2019t cause excessive problems.\nTypically, it is:\ntorch.compile\nyourtrainorevalstep with the optimizer but without the loop,\ntrain\neval\nyour top-levelnn.Module\nnn.Module\nor some sub-nn.Modules.\nnn.Module\ntorch.compilespecifically doesn\u2019t handle distributed wrapper modules like DDP or FSDP very well,\nso consider applyingtorch.compileto the inner module passed to the wrapper.\ntorch.compile\ntorch.compile\n\n```python\n# inference\nmodel = ...\nmodel.compile()\n\nfor _ in range(N_ITERS):\n    inp = ...\n    out = model(inp)\n\n```\n\n\n```python\n# training\nmodel = ...\nopt = torch.optim.Adam(model.parameters())\n\n@torch.compile\ndef train(mod, data):\n    opt.zero_grad(True)\n    pred = mod(data[0])\n    loss = torch.nn.CrossEntropyLoss()(pred, data[1])\n    loss.backward()\n    opt.step()\n\nfor _ in range(N_ITERS):\n    inp = ...\n    train(model, inp)\n\n```\n\n\n```python\n# DistributedDataParallel\nmodel = ...\nmodel.compile()\nmodel_ddp = DistributedDataParallel(model, ...)\n\nfor _ in range(N_ITERS):\n    inp = ...\n    out = model_ddp(inp)\n\n```\n\n\n## compile(model)vsmodel.compile()#\n\ncompile(model)\nmodel.compile()\nDue to nuances to howtorch.compileinteracts withnn.Moduleinstances,\nwe advise using the.compile()method ofnn.Moduleinstances if you wish to compile them as\ntop-level functions. Nested module calls will be traced correctly -\nthere is no need to call.compile()in that case.\ntorch.compile\nnn.Module\n.compile()\nnn.Module\n.compile()\n\n```python\n# DO NOT DO THIS\nmodel = MyModel()\nmodel = torch.compile(model)\nmodel(inp)\n\n# DO THIS\nmodel = MyModel()\nmodel.compile()\nmodel(inp)\n\n# this is also acceptable\n@torch.compile\ndef fn(model, inp):\n    return model(inp)\nmodel = MyModel()\nfn(model, inp)\n\n```\n",
+  "url": "https://pytorch.org/docs/stable/compile/programming_model.where_to_apply_compile.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

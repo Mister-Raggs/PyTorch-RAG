@@ -1,0 +1,13 @@
+{
+  "doc_id": "41b98469435111d2fec1bdee1973be97",
+  "source": "pytorch_docs",
+  "title": "torch.signal \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.signal#\n\nCreated On: Oct 14, 2022 | Last Updated On: Jun 18, 2025\nThetorch.signalmodule, modeled after SciPy\u2019ssignalmodule.\ntorch.signal\n\n## torch.signal.windows#\n\nbartlett\n\nbartlett\nComputes the Bartlett window.\nblackman\n\nblackman\nComputes the Blackman window.\ncosine\n\ncosine\nComputes a window with a simple cosine waveform, following the same implementation as SciPy.\nexponential\n\nexponential\nComputes a window with an exponential waveform.\ngaussian\n\ngaussian\nComputes a window with a gaussian waveform.\ngeneral_cosine\n\ngeneral_cosine\nComputes the general cosine window.\ngeneral_hamming\n\ngeneral_hamming\nComputes the general Hamming window.\nhamming\n\nhamming\nComputes the Hamming window.\nhann\n\nhann\nComputes the Hann window.\nkaiser\n\nkaiser\nComputes the Kaiser window.\nnuttall\n\nnuttall\nComputes the minimum 4-term Blackman-Harris window according to Nuttall.",
+  "url": "https://pytorch.org/docs/stable/signal.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

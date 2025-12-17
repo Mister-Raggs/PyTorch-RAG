@@ -1,0 +1,13 @@
+{
+  "doc_id": "634b5e38737ecb5f23bacedd9f1dd226",
+  "source": "pytorch_docs",
+  "title": "torch.fft \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.fft#\n\nCreated On: Aug 06, 2020 | Last Updated On: Jun 13, 2025\nDiscrete Fourier transforms and related functions.\n\n## Fast Fourier Transforms#\n\nfft\n\nfft\nComputes the one dimensional discrete Fourier transform ofinput.\ninput\nifft\n\nifft\nComputes the one dimensional inverse discrete Fourier transform ofinput.\ninput\nfft2\n\nfft2\nComputes the 2 dimensional discrete Fourier transform ofinput.\ninput\nifft2\n\nifft2\nComputes the 2 dimensional inverse discrete Fourier transform ofinput.\ninput\nfftn\n\nfftn\nComputes the N dimensional discrete Fourier transform ofinput.\ninput\nifftn\n\nifftn\nComputes the N dimensional inverse discrete Fourier transform ofinput.\ninput\nrfft\n\nrfft\nComputes the one dimensional Fourier transform of real-valuedinput.\ninput\nirfft\n\nirfft\nComputes the inverse ofrfft().\nrfft()\nrfft2\n\nrfft2\nComputes the 2-dimensional discrete Fourier transform of realinput.\ninput\nirfft2\n\nirfft2\nComputes the inverse ofrfft2().\nrfft2()\nrfftn\n\nrfftn\nComputes the N-dimensional discrete Fourier transform of realinput.\ninput\nirfftn\n\nirfftn\nComputes the inverse ofrfftn().\nrfftn()\nhfft\n\nhfft\nComputes the one dimensional discrete Fourier transform of a Hermitian symmetricinputsignal.\ninput\nihfft\n\nihfft\nComputes the inverse ofhfft().\nhfft()\nhfft2\n\nhfft2\nComputes the 2-dimensional discrete Fourier transform of a Hermitian symmetricinputsignal.\ninput\nihfft2\n\nihfft2\nComputes the 2-dimensional inverse discrete Fourier transform of realinput.\ninput\nhfftn\n\nhfftn\nComputes the n-dimensional discrete Fourier transform of a Hermitian symmetricinputsignal.\ninput\nihfftn\n\nihfftn\nComputes the N-dimensional inverse discrete Fourier transform of realinput.\ninput\n\n## Helper Functions#\n\nfftfreq\n\nfftfreq\nComputes the discrete Fourier Transform sample frequencies for a signal of sizen.\nn\nrfftfreq\n\nrfftfreq\nComputes the sample frequencies forrfft()with a signal of sizen.\nrfft()\nn\nfftshift\n\nfftshift\nReorders n-dimensional FFT data, as provided byfftn(), to have negative frequency terms first.\nfftn()\nifftshift\n\nifftshift\nInverse offftshift().\nfftshift()",
+  "url": "https://pytorch.org/docs/stable/fft.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

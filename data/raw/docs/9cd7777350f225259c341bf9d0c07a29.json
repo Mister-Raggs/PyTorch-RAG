@@ -1,0 +1,13 @@
+{
+  "doc_id": "9cd7777350f225259c341bf9d0c07a29",
+  "source": "pytorch_docs",
+  "title": "torch.mtia \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.mtia#\n\nCreated On: Jul 11, 2023 | Last Updated On: Jun 08, 2025\nThe MTIA backend is implemented out of the tree, only interfaces are be defined here.\nThis package enables an interface for accessing MTIA backend in python\nStreamContext\n\nStreamContext\nContext-manager that selects a given stream.\ncurrent_device\n\ncurrent_device\nReturn the index of a currently selected device.\ncurrent_stream\n\ncurrent_stream\nReturn the currently selectedStreamfor a given device.\nStream\ndefault_stream\n\ndefault_stream\nReturn the defaultStreamfor a given device.\nStream\ndevice_count\n\ndevice_count\nReturn the number of MTIA devices available.\ninit\n\ninit\n\nis_available\n\nis_available\nReturn true if MTIA device is available\nis_initialized\n\nis_initialized\nReturn whether PyTorch's MTIA state has been initialized.\nmemory_stats\n\nmemory_stats\nReturn a dictionary of MTIA memory allocator statistics for a given device.\nget_device_capability\n\nget_device_capability\nReturn capability of a given device as a tuple of (major version, minor version).\nempty_cache\n\nempty_cache\nEmpty the MTIA device cache.\nrecord_memory_history\n\nrecord_memory_history\nEnable/Disable the memory profiler on MTIA allocator\nsnapshot\n\nsnapshot\nReturn a dictionary of MTIA memory allocator history\nattach_out_of_memory_observer\n\nattach_out_of_memory_observer\nAttach an out-of-memory observer to MTIA memory allocator\nset_device\n\nset_device\nSet the current device.\nset_stream\n\nset_stream\nSet the current stream.This is a wrapper API to set the stream.\nstream\n\nstream\nWrap around the Context-manager StreamContext that selects a given stream.\nsynchronize\n\nsynchronize\nWaits for all jobs in all streams on a MTIA device to complete.\ndevice\n\ndevice\nContext-manager that changes the selected device.\nset_rng_state\n\nset_rng_state\nSets the random number generator state.\nget_rng_state\n\nget_rng_state\nReturns the random number generator state as a ByteTensor.\nDeferredMtiaCallError\n\nDeferredMtiaCallError\n\n\n## Streams and events#\n\nEvent\n\nEvent\nQuery and record Stream status to identify or control dependencies across Stream and measure timing.\nStream\n\nStream\nAn in-order queue of executing the respective tasks asynchronously in first in first out (FIFO) order.",
+  "url": "https://pytorch.org/docs/stable/mtia.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

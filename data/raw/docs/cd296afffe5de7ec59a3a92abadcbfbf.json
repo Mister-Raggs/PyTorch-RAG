@@ -1,0 +1,13 @@
+{
+  "doc_id": "cd296afffe5de7ec59a3a92abadcbfbf",
+  "source": "pytorch_docs",
+  "title": "Threading Environment Variables \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Threading Environment Variables#\n\nCreated On: Jun 10, 2025 | Last Updated On: Jun 10, 2025\nVariable\nDescription\nOMP_NUM_THREADS\nOMP_NUM_THREADS\nSets the maximum number of threads to use for OpenMP parallel regions.\nMKL_NUM_THREADS\nMKL_NUM_THREADS\nSets the maximum number of threads to use for the Intel MKL library. Note that MKL_NUM_THREADS takes precedence overOMP_NUM_THREADS.\nOMP_NUM_THREADS",
+  "url": "https://pytorch.org/docs/stable/threading_environment_variables.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

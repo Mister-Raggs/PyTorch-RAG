@@ -1,0 +1,13 @@
+{
+  "doc_id": "9f6daad91d3f09677a52b1e83bdaf9d3",
+  "source": "pytorch_docs",
+  "title": "Miscellaneous Environment Variables \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Miscellaneous Environment Variables#\n\nCreated On: Jun 17, 2025 | Last Updated On: Jun 17, 2025\nVariable\nDescription\nTORCH_FORCE_WEIGHTS_ONLY_LOAD\nTORCH_FORCE_WEIGHTS_ONLY_LOAD\nIf set to [1,y,yes,true], thetorch.loadwill useweights_only=True. This will happen even ifweights_only=Falsewas passed at the callsite. For more documentation on this, seetorch.load.\n1\ny\nyes\ntrue\ntorch.load\nweights_only=True\nweights_only=False\ntorch.load\nTORCH_FORCE_NO_WEIGHTS_ONLY_LOAD\nTORCH_FORCE_NO_WEIGHTS_ONLY_LOAD\nIf set to [1,y,yes,true], thetorch.loadwill useweights_only=Falseif theweights_onlyvariable was not passed at the callsite. For more documentation on this, seetorch.load.\n1\ny\nyes\ntrue\ntorch.load\nweights_only=False\nweights_only\ntorch.load\nTORCH_AUTOGRAD_SHUTDOWN_WAIT_LIMIT\nTORCH_AUTOGRAD_SHUTDOWN_WAIT_LIMIT\nUnder some conditions, autograd threads can hang on shutdown, therefore we do not wait for them to shutdown indefinitely but rely on a timeout that is by default set to10seconds. This environment variable can be used to set the timeout in seconds.\n10\nTORCH_DEVICE_BACKEND_AUTOLOAD\nTORCH_DEVICE_BACKEND_AUTOLOAD\nIf set to1, out-of-tree backend extensions will be automatically imported when runningimporttorch.\n1\nimporttorch",
+  "url": "https://pytorch.org/docs/stable/miscellaneous_environment_variables.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

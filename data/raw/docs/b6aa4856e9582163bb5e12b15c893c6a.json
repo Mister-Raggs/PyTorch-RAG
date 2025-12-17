@@ -1,0 +1,13 @@
+{
+  "doc_id": "b6aa4856e9582163bb5e12b15c893c6a",
+  "source": "pytorch_docs",
+  "title": "CPU threading and TorchScript inference \u2014 PyTorch 2.9 documentation",
+  "text": "\n## CPU threading and TorchScript inference#\n\nCreated On: Jul 29, 2019 | Last Updated On: Jul 15, 2025\nWarning\nTorchScript is deprecated, please usetorch.exportinstead.",
+  "url": "https://pytorch.org/docs/stable/notes/cpu_threading_torchscript_inference.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

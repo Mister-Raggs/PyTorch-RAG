@@ -1,0 +1,13 @@
+{
+  "doc_id": "50303d1e3d355a14591d9cdbc7cbac3c",
+  "source": "pytorch_docs",
+  "title": "torch.utils.module_tracker \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.utils.module_tracker#\n\nCreated On: May 04, 2024 | Last Updated On: Jun 11, 2025\nThis utility can be used to track the current position inside antorch.nn.Modulehierarchy.\nIt can be used within other tracking tools to be able to easily associate measured quantities to user-friendly names. This is used in particular in the FlopCounterMode today.\ntorch.nn.Module\nModuleTrackeris a context manager that tracks the nn.Module hierarchy during execution\nso that other system can query which Module is currently being executed (or its backward is being\nexecuted).\nModuleTracker\nYou can access theparentsattribute on this context manager to get the set of all the\nModules currently being executed via their fqn (fully qualified name, also used as the key within\nthe state_dict).\nYou can access theis_bwattribute to know if you are currently running in backward or not.\nparents\nis_bw\nNote thatparentsis never empty and always contains the \u201cGlobal\u201d key. Theis_bwflag\nwill remainTrueafter the forward until another Module is executed. If you need it to be\nmore accurate, please submit an issue requesting this. Adding a map from fqn to the module instance\nis possible but not done yet, please submit an issue requesting this if you need it.\nparents\nis_bw\nTrue\nExample usage\n\n```python\nmod = torch.nn.Linear(2, 2)\n\nwith ModuleTracker() as tracker:\n    # Access anything during the forward pass\n    def my_linear(m1, m2, bias):\n        print(f\"Current modules: {tracker.parents}\")\n        return torch.mm(m1, m2.t()) + bias\n\n    torch.nn.functional.linear = my_linear\n\n    mod(torch.rand(2, 2))\n\n```\n",
+  "url": "https://pytorch.org/docs/stable/module_tracker.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "doc_id": "aa7807e9cba63a18cd6865ae2f93685f",
+  "source": "pytorch_docs",
+  "title": "TorchElastic Kubernetes \u2014 PyTorch 2.9 documentation",
+  "text": "\n## TorchElastic Kubernetes#\n\nCreated On: May 04, 2021 | Last Updated On: Jan 23, 2023\nPlease refer to our GitHub\u2019sKubernetes READMEfor more information on Elastic Job Controller and custom resource definition.",
+  "url": "https://pytorch.org/docs/stable/elastic/kubernetes.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

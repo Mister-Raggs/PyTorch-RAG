@@ -1,0 +1,13 @@
+{
+  "doc_id": "a78db2f76798ba13a46fb6f8817fc524",
+  "source": "pytorch_docs",
+  "title": "torch.cpu \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.cpu#\n\nCreated On: Jul 11, 2023 | Last Updated On: Oct 11, 2023\nThis package implements abstractions found intorch.cudato facilitate writing device-agnostic code.\ntorch.cuda\ncurrent_device\n\ncurrent_device\nReturns current device for cpu.\ncurrent_stream\n\ncurrent_stream\nReturns the currently selectedStreamfor a given device.\nStream\nis_available\n\nis_available\nReturns a bool indicating if CPU is currently available.\nsynchronize\n\nsynchronize\nWaits for all kernels in all streams on the CPU device to complete.\nstream\n\nstream\nWrapper around the Context-manager StreamContext that selects a given stream.\nset_device\n\nset_device\nSets the current device, in CPU we do nothing.\ndevice_count\n\ndevice_count\nReturns number of CPU devices (not cores).\nStreamContext\n\nStreamContext\nContext-manager that selects a given stream.\n\n## Streams and events#\n\nStream\n\nStream\nN.B.",
+  "url": "https://pytorch.org/docs/stable/cpu.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

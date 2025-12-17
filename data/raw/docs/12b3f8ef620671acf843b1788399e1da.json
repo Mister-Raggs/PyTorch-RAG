@@ -1,0 +1,13 @@
+{
+  "doc_id": "12b3f8ef620671acf843b1788399e1da",
+  "source": "pytorch_docs",
+  "title": "MPS Environment Variables \u2014 PyTorch 2.9 documentation",
+  "text": "\n## MPS Environment Variables#\n\nCreated On: Jun 11, 2025 | Last Updated On: Jun 11, 2025\nPyTorch Environment Variables\nVariable\nDescription\nPYTORCH_DEBUG_MPS_ALLOCATOR\nPYTORCH_DEBUG_MPS_ALLOCATOR\nIf set to1, set allocator logging level to verbose.\n1\nPYTORCH_MPS_LOG_PROFILE_INFO\nPYTORCH_MPS_LOG_PROFILE_INFO\nSet log options bitmask toMPSProfiler. SeeLogOptionsenum inaten/src/ATen/mps/MPSProfiler.h.\nMPSProfiler\nLogOptions\naten/src/ATen/mps/MPSProfiler.h\nPYTORCH_MPS_TRACE_SIGNPOSTS\nPYTORCH_MPS_TRACE_SIGNPOSTS\nSet profile and signpost bitmasks toMPSProfiler. SeeProfileOptionsandSignpostTypes.\nMPSProfiler\nProfileOptions\nSignpostTypes\nPYTORCH_MPS_HIGH_WATERMARK_RATIO\nPYTORCH_MPS_HIGH_WATERMARK_RATIO\nHigh watermark ratio for MPS allocator. Default is 1.7.\nPYTORCH_MPS_LOW_WATERMARK_RATIO\nPYTORCH_MPS_LOW_WATERMARK_RATIO\nLow watermark ratio for MPS allocator. Default is 1.4 (unified) or 1.0 (discrete).\nPYTORCH_MPS_FAST_MATH\nPYTORCH_MPS_FAST_MATH\nIf1, enables fast math for MPS kernels. See section 1.6.3 in theMetal Shading Language Spec.\n1\nPYTORCH_MPS_PREFER_METAL\nPYTORCH_MPS_PREFER_METAL\nIf1, uses metal kernels instead of MPS Graph APIs. Used for matmul.\n1\nPYTORCH_ENABLE_MPS_FALLBACK\nPYTORCH_ENABLE_MPS_FALLBACK\nIf1, falls back to CPU when MPS ops aren\u2019t supported.\n1\nNote\nhigh watermark ratiois a hard limit for the total allowed allocations\n0.0: disables high watermark limit (may cause system failure if system-wide OOM occurs)\n0.0\n1.0: recommended maximum allocation size (i.e., device.recommendedMaxWorkingSetSize)\n1.0\n>1.0: allows limits beyond the device.recommendedMaxWorkingSetSize\n>1.0\ne.g., value 0.95 means we allocate up to 95% of recommended maximum\nallocation size; beyond that, the allocations would fail with OOM error.\nlow watermark ratiois a soft limit to attempt limiting memory allocations up to the lower watermark\nlevel by garbage collection or committing command buffers more frequently (a.k.a, adaptive commit).\nValue between 0 to m_high_watermark_ratio (setting 0.0 disables adaptive commit and garbage collection)\ne.g., value 0.9 means we \u2018attempt\u2019 to limit allocations up to 90% of recommended maximum\nallocation size.",
+  "url": "https://pytorch.org/docs/stable/mps_environment_variables.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

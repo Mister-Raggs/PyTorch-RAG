@@ -1,0 +1,13 @@
+{
+  "doc_id": "7292666c29006e7e84a43ec11d67243c",
+  "source": "pytorch_docs",
+  "title": "torch.utils.mobile_optimizer \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.utils.mobile_optimizer#\n\nCreated On: Jun 11, 2025 | Last Updated On: Jun 11, 2025\nPyTorch Mobile is no longer actively supported. Redirecting toExecuTorch documentation.\nWarning\nPyTorch Mobile is no longer actively supported. Please check outExecuTorch, PyTorch\u2019s\nall-new on-device inference library. You can also review\ndocumentation onXNNPACKandVulkandelegates.\nOptimize a torch script module for mobile deployment.\nscript_module(ScriptModule) \u2013 An instance of torch script module with type of ScriptModule.\noptimization_blocklist(Optional[set[torch._C._MobileOptimizerType]]) \u2013 A set with type of MobileOptimizerType. When set is not passed,\noptimization method will run all the optimizer pass; otherwise, optimizer\nmethod will run the optimization pass that is not included inside optimization_blocklist.\npreserved_methods(Optional[list[~AnyStr]]) \u2013 A list of methods that needed to be preserved when freeze_module pass is invoked\nbackend(str) \u2013 Device type to use for running the result model (\u2018CPU\u2019(default), \u2018Vulkan\u2019 or \u2018Metal\u2019).\nA new optimized torch script module\nRecursiveScriptModule",
+  "url": "https://pytorch.org/docs/stable/mobile_optimizer.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

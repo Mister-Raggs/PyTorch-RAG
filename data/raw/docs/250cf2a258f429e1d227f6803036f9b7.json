@@ -1,0 +1,13 @@
+{
+  "doc_id": "250cf2a258f429e1d227f6803036f9b7",
+  "source": "pytorch_docs",
+  "title": "Debugging Environment Variables \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Debugging Environment Variables#\n\nCreated On: Feb 15, 2024 | Last Updated On: Jun 06, 2025\nVariable\nDescription\nTORCH_SHOW_CPP_STACKTRACES\nTORCH_SHOW_CPP_STACKTRACES\nIf set to1, makes PyTorch print out a stack trace when it detects a C++ error.\n1\nTORCH_CPP_LOG_LEVEL\nTORCH_CPP_LOG_LEVEL\nSet the log level of c10 logging facility (supports both GLOG and c10 loggers). Valid values areINFO,WARNING,ERROR, andFATALor their numerical equivalents0,1,2, and3.\nINFO\nWARNING\nERROR\nFATAL\n0\n1\n2\n3\nTORCH_LOGS\nTORCH_LOGS\nFor a more in depth explanation of this environment variable, seetorch._logging.",
+  "url": "https://pytorch.org/docs/stable/debugging_environment_variables.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

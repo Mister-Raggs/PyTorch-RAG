@@ -1,0 +1,13 @@
+{
+  "doc_id": "0b70e96f69a62d3bbc8663758eca0a72",
+  "source": "pytorch_docs",
+  "title": "torch.mutation \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.mutation#\n\n\n## user_input_mutation#\n\nNote\nTags:torch.mutation\nSupport Level: SUPPORTED\nOriginal source code:\n\n```python\n# mypy: allow-untyped-defs\nimport torch\n\n\nclass UserInputMutation(torch.nn.Module):\n    \"\"\"\n    Directly mutate user input in forward\n    \"\"\"\n\n    def forward(self, x):\n        x.mul_(2)\n        return x.cos()\n\n\nexample_args = (torch.randn(3, 2),)\ntags = {\"torch.mutation\"}\nmodel = UserInputMutation()\n\n\ntorch.export.export(model, example_args)\n\n```\n\nResult:\n\n```python\nExportedProgram:\n    class GraphModule(torch.nn.Module):\n        def forward(self, x: \"f32[3, 2]\"):\n                 mul_: \"f32[3, 2]\" = torch.ops.aten.mul_.Tensor(x, 2);  x = None\n\n                 cos: \"f32[3, 2]\" = torch.ops.aten.cos.default(mul_);  mul_ = None\n            return (cos,)\n\nGraph signature:\n    # inputs\n    x: USER_INPUT\n\n    # outputs\n    cos: USER_OUTPUT\n\nRange constraints: {}\n\n```\n",
+  "url": "https://pytorch.org/docs/stable/generated/exportdb/torch.mutation.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

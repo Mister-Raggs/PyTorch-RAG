@@ -1,0 +1,13 @@
+{
+  "doc_id": "3b4586edf12eafeecb11d07e7188aab2",
+  "source": "pytorch_docs",
+  "title": "torch.utils \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.utils#\n\nCreated On: Jul 21, 2023 | Last Updated On: Jun 06, 2025\nrename_privateuse1_backend\n\nrename_privateuse1_backend\nRename the privateuse1 backend device to make it more convenient to use as a device name within PyTorch APIs.\ngenerate_methods_for_privateuse1_backend\n\ngenerate_methods_for_privateuse1_backend\nAutomatically generate attributes and methods for the custom backend after rename privateuse1 backend.\nget_cpp_backtrace\n\nget_cpp_backtrace\nReturn a string containing the C++ stack trace of the current thread.\nset_module\n\nset_module\nSet the module attribute on a python object for a given object for nicer printing\nswap_tensors\n\nswap_tensors\nThis function swaps the content of the two Tensor objects.",
+  "url": "https://pytorch.org/docs/stable/utils.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

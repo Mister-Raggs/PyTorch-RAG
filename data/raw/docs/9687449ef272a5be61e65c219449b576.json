@@ -1,0 +1,13 @@
+{
+  "doc_id": "9687449ef272a5be61e65c219449b576",
+  "source": "pytorch_docs",
+  "title": "torch.Size \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.Size#\n\nCreated On: Apr 19, 2024 | Last Updated On: Jun 18, 2025\ntorch.Sizeis the result type of a call totorch.Tensor.size(). It describes the size of all dimensions\nof the original tensor. As a subclass oftuple, it supports common sequence operations like indexing and\nlength.\ntorch.Size\ntorch.Tensor.size()\ntuple\nExample:\n\n```python\n    >>> x = torch.ones(10, 20, 30)\n    >>> s = x.size()\n    >>> s\n    torch.Size([10, 20, 30])\n    >>> s[1]\n    20\n    >>> len(s)\n    3\n\n```\n\nReturn number of occurrences of value.\nReturn first index of value.\nRaises ValueError if the value is not present.\nReturns the number of elements atorch.Tensorwith the given size would contain.\ntorch.Tensor\nMore formally, for a tensorx=tensor.ones(10,10)with sizes=torch.Size([10,10]),x.numel()==x.size().numel()==s.numel()==100holds true.\nx=tensor.ones(10,10)\ns=torch.Size([10,10])\nx.numel()==x.size().numel()==s.numel()==100\nExample:\n\n```python\n>>> x=torch.ones(10, 10)\n>>> s=x.size()\n>>> s\ntorch.Size([10, 10])\n>>> s.numel()\n100\n>>> x.numel() == s.numel()\nTrue\n\n```\n\nWarning\nThis function does not return the number of dimensions described bytorch.Size, but instead the number\nof elements atorch.Tensorwith that size would contain.\ntorch.Size\ntorch.Tensor",
+  "url": "https://pytorch.org/docs/stable/size.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

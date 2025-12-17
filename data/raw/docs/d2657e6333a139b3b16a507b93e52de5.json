@@ -1,0 +1,13 @@
+{
+  "doc_id": "d2657e6333a139b3b16a507b93e52de5",
+  "source": "pytorch_docs",
+  "title": "torch.map \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.map#\n\n\n## dynamic_shape_map#\n\nNote\nTags:torch.dynamic-shape,torch.map\nSupport Level: SUPPORTED\nOriginal source code:\n\n```python\n# mypy: allow-untyped-defs\nimport torch\n\nfrom functorch.experimental.control_flow import map\n\nclass DynamicShapeMap(torch.nn.Module):\n    \"\"\"\n    functorch map() maps a function over the first tensor dimension.\n    \"\"\"\n\n    def forward(self, xs, y):\n        def body(x, y):\n            return x + y\n\n        return map(body, xs, y)\n\nexample_args = (torch.randn(3, 2), torch.randn(2))\ntags = {\"torch.dynamic-shape\", \"torch.map\"}\nmodel = DynamicShapeMap()\n\n\ntorch.export.export(model, example_args)\n\n```\n\nResult:\n\n```python\nExportedProgram:\n    class GraphModule(torch.nn.Module):\n        def forward(self, xs: \"f32[3, 2]\", y: \"f32[2]\"):\n                 body_graph_0 = self.body_graph_0\n            map_impl = torch.ops.higher_order.map_impl(body_graph_0, [xs], [y]);  body_graph_0 = xs = y = None\n            getitem: \"f32[3, 2]\" = map_impl[0];  map_impl = None\n            return (getitem,)\n\n        class body_graph_0(torch.nn.Module):\n            def forward(self, xs: \"f32[2]\", y: \"f32[2]\"):\n                         add: \"f32[2]\" = torch.ops.aten.add.Tensor(xs, y);  xs = y = None\n                return (add,)\n\nGraph signature:\n    # inputs\n    xs: USER_INPUT\n    y: USER_INPUT\n\n    # outputs\n    getitem: USER_OUTPUT\n\nRange constraints: {}\n\n```\n",
+  "url": "https://pytorch.org/docs/stable/generated/exportdb/torch.map.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

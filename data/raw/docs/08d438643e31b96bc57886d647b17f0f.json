@@ -1,0 +1,13 @@
+{
+  "doc_id": "08d438643e31b96bc57886d647b17f0f",
+  "source": "pytorch_docs",
+  "title": "Torch Distributed Elastic \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Torch Distributed Elastic#\n\nCreated On: Jun 16, 2025 | Last Updated On: Jul 25, 2025\nMakes distributed PyTorch fault-tolerant and elastic.\n\n## Get Started#\n\nUsage\n\n## Documentation#\n\nAPI\nAdvanced\nPlugins",
+  "url": "https://pytorch.org/docs/stable/distributed.elastic.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

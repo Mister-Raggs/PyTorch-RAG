@@ -1,0 +1,13 @@
+{
+  "doc_id": "47a678050e75f03c1bca362a6893fd52",
+  "source": "pytorch_docs",
+  "title": "Quickstart \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Quickstart#\n\nCreated On: May 04, 2021 | Last Updated On: Feb 09, 2023\nTo launch afault-tolerantjob, run the following on all nodes.\n\n```python\ntorchrun\n   --nnodes=NUM_NODES\n   --nproc-per-node=TRAINERS_PER_NODE\n   --max-restarts=NUM_ALLOWED_FAILURES\n   --rdzv-id=JOB_ID\n   --rdzv-backend=c10d\n   --rdzv-endpoint=HOST_NODE_ADDR\n   YOUR_TRAINING_SCRIPT.py (--arg1 ... train script args...)\n\n```\n\nTo launch anelasticjob, run the following on at leastMIN_SIZEnodes\nand at mostMAX_SIZEnodes.\nMIN_SIZE\nMAX_SIZE\n\n```python\ntorchrun\n    --nnodes=MIN_SIZE:MAX_SIZE\n    --nproc-per-node=TRAINERS_PER_NODE\n    --max-restarts=NUM_ALLOWED_FAILURES_OR_MEMBERSHIP_CHANGES\n    --rdzv-id=JOB_ID\n    --rdzv-backend=c10d\n    --rdzv-endpoint=HOST_NODE_ADDR\n    YOUR_TRAINING_SCRIPT.py (--arg1 ... train script args...)\n\n```\n\nNote\nTorchElastic models failures as membership changes. When a node fails,\nthis is treated as a \u201cscale down\u201d event. When the failed node is replaced by\nthe scheduler, it is a \u201cscale up\u201d event. Hence for both fault tolerant\nand elastic jobs,--max-restartsis used to control the total number of\nrestarts before giving up, regardless of whether the restart was caused\ndue to a failure or a scaling event.\n--max-restarts\nHOST_NODE_ADDR, in form <host>[:<port>] (e.g. node1.example.com:29400),\nspecifies the node and the port on which the C10d rendezvous backend should be\ninstantiated and hosted. It can be any node in your training cluster, but\nideally you should pick a node that has a high bandwidth.\nHOST_NODE_ADDR\nNote\nIf no port number is specifiedHOST_NODE_ADDRdefaults to 29400.\nHOST_NODE_ADDR\nNote\nThe--standaloneoption can be passed to launch a single node job with a\nsidecar rendezvous backend. You don\u2019t have to pass--rdzv-id,--rdzv-endpoint, and--rdzv-backendwhen the--standaloneoption\nis used.\n--standalone\n--rdzv-id\n--rdzv-endpoint\n--rdzv-backend\n--standalone\nNote\nLearn more about writing your distributed training scripthere.\nIftorchrundoes not meet your requirements you may use our APIs directly\nfor more powerful customization. Start by taking a look at theelastic agentAPI.\ntorchrun",
+  "url": "https://pytorch.org/docs/stable/elastic/quickstart.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "doc_id": "e9571ad7c92b5b06563513e3ed29c7da",
+  "source": "pytorch_docs",
+  "title": "torch.are_deterministic_algorithms_enabled \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.are_deterministic_algorithms_enabled#\n\nReturns True if the global deterministic flag is turned on. Refer totorch.use_deterministic_algorithms()documentation for more details.\ntorch.use_deterministic_algorithms()\nbool",
+  "url": "https://pytorch.org/docs/stable/generated/torch.are_deterministic_algorithms_enabled.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

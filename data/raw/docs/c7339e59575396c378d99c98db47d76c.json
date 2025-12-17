@@ -1,0 +1,13 @@
+{
+  "doc_id": "c7339e59575396c378d99c98db47d76c",
+  "source": "pytorch_docs",
+  "title": "Torch Environment Variables \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Torch Environment Variables#\n\nCreated On: Feb 15, 2024 | Last Updated On: Jun 10, 2025\nPyTorch leverages environment variables for adjusting various settings that influence its runtime behavior.\nThese variables offer control over key functionalities, such as displaying the C++ stack trace upon encountering errors, synchronizing the execution of CUDA kernels,\nspecifying the number of threads for parallel processing tasks and many more.\nMoreover, PyTorch leverages several high-performance libraries, such as MKL and cuDNN,\nwhich also utilize environment variables to modify their functionality.\nThis interplay of settings allows for a highly customizable development environment that can be\noptimized for efficiency, debugging, and computational resource management.\nPlease note that while this documentation covers a broad spectrum of environment variables relevant to PyTorch and its associated libraries, it is not exhaustive.\nIf you find anything in this documentation that is missing, incorrect, or could be improved, please let us know by filing an issue or opening a pull request.",
+  "url": "https://pytorch.org/docs/stable/torch_environment_variables.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

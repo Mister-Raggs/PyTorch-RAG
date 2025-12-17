@@ -1,0 +1,13 @@
+{
+  "doc_id": "dceec10a6b9b5651d97d766b8bb1cf89",
+  "source": "pytorch_docs",
+  "title": "MPS backend \u2014 PyTorch 2.9 documentation",
+  "text": "\n## MPS backend#\n\nCreated On: May 13, 2022 | Last Updated On: Jun 02, 2022\nmpsdevice enables high-performance\ntraining on GPU for MacOS devices with Metal programming framework.  It\nintroduces a new device to map Machine Learning computational graphs and\nprimitives on highly efficient Metal Performance Shaders Graph framework and\ntuned kernels provided by Metal Performance Shaders framework respectively.\nmps\nThe new MPS backend extends the PyTorch ecosystem and provides existing scripts\ncapabilities to setup and run operations on GPU.\nTo get started, simply move your Tensor and Module to thempsdevice:\nmps\n\n```python\n# Check that MPS is available\nif not torch.backends.mps.is_available():\n    if not torch.backends.mps.is_built():\n        print(\"MPS not available because the current PyTorch install was not \"\n              \"built with MPS enabled.\")\n    else:\n        print(\"MPS not available because the current MacOS version is not 12.3+ \"\n              \"and/or you do not have an MPS-enabled device on this machine.\")\n\nelse:\n    mps_device = torch.device(\"mps\")\n\n    # Create a Tensor directly on the mps device\n    x = torch.ones(5, device=mps_device)\n    # Or\n    x = torch.ones(5, device=\"mps\")\n\n    # Any operation happens on the GPU\n    y = x * 2\n\n    # Move your model to mps just like any other device\n    model = YourFavoriteNet()\n    model.to(mps_device)\n\n    # Now every call runs on the GPU\n    pred = model(x)\n\n```\n",
+  "url": "https://pytorch.org/docs/stable/notes/mps.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

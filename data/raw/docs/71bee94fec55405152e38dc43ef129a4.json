@@ -1,0 +1,13 @@
+{
+  "doc_id": "71bee94fec55405152e38dc43ef129a4",
+  "source": "pytorch_docs",
+  "title": "Events \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Events#\n\nCreated On: May 04, 2021 | Last Updated On: Jun 10, 2024\nModule contains events processing mechanisms that are integrated with the standard python logging.\nExample of usage:\n\n```python\nfrom torch.distributed.elastic import events\n\nevent = events.Event(\n    name=\"test_event\", source=events.EventSource.WORKER, metadata={...}\n)\nevents.get_logging_handler(destination=\"console\").info(event)\n\n```\n\n\n## API Methods#\n\nInitialize rendezvous event object and record its operations.\nrun_id(str) \u2013 The run id of the rendezvous.\nmessage(str) \u2013 The message describing the event.\nnode_state(NodeState) \u2013 The state of the node (INIT, RUNNING, SUCCEEDED, FAILED).\nname(str) \u2013 Event name. (E.g. Current action being performed).\nhostname(str) \u2013 Hostname of the node.\npid(Optional[int]) \u2013 The process id of the node.\nmaster_endpoint(str) \u2013 The master endpoint for the rendezvous store, if known.\nlocal_id(Optional[int]) \u2013 The local_id of the node, if defined in dynamic_rendezvous.py\nrank(Optional[int]) \u2013 The rank of the node, if known.\nNone\nNone\nExample\n\n```python\n>>> # See DynamicRendezvousHandler class\n>>> def _record(\n...     self,\n...     message: str,\n...     node_state: NodeState = NodeState.RUNNING,\n...     rank: Optional[int] = None,\n... ) -> None:\n...     construct_and_record_rdzv_event(\n...         name=f\"{self.__class__.__name__}.{get_method_name()}\",\n...         run_id=self._settings.run_id,\n...         message=message,\n...         node_state=node_state,\n...         hostname=self._this_node.addr,\n...         pid=self._this_node.pid,\n...         local_id=self._this_node.local_id,\n...         rank=rank,\n...     )\n\n```\n\nHandler\n\n## Event Objects#\n\nThe class represents the generic event that occurs during the torchelastic job execution.\nThe event can be any kind of meaningful action.\nname(str) \u2013 event name.\nsource(EventSource) \u2013 the event producer, e.g. agent or worker\ntimestamp(int) \u2013 timestamp in milliseconds when event occurred.\nmetadata(dict[str,Union[str,int,float,bool,NoneType]]) \u2013 additional data that is associated with the event.\nKnown identifiers of the event producers.\nalias ofOptional[Union[str,int,float,bool]]\nOptional\nUnion\nstr\nint\nfloat\nbool",
+  "url": "https://pytorch.org/docs/stable/elastic/events.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

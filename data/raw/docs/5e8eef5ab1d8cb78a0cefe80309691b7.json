@@ -1,0 +1,13 @@
+{
+  "doc_id": "5e8eef5ab1d8cb78a0cefe80309691b7",
+  "source": "pytorch_docs",
+  "title": "Type Info \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Type Info#\n\nCreated On: Jun 06, 2025 | Last Updated On: Aug 14, 2025\nThe numerical properties of atorch.dtypecan be accessed through either thetorch.finfoor thetorch.iinfo.\ntorch.dtype\ntorch.finfo\ntorch.iinfo\n\n## torch.finfo#\n\nAtorch.finfois an object that represents the numerical properties of a floating pointtorch.dtype, (i.e.torch.float32,torch.float64,torch.float16, andtorch.bfloat16).\nThis is similar tonumpy.finfo.\ntorch.finfo\ntorch.dtype\ntorch.float32\ntorch.float64\ntorch.float16\ntorch.bfloat16\nAtorch.finfoprovides the following attributes:\ntorch.finfo\nName\nType\nDescription\nbits\nint\nThe number of bits occupied by the type.\neps\nfloat\nThe difference between 1.0 and the next smallest representable float larger than 1.0.\nmax\nfloat\nThe largest representable number.\nmin\nfloat\nThe smallest representable number (typically-max).\n-max\ntiny\nfloat\nThe smallest positive normal number. Equivalent tosmallest_normal.\nsmallest_normal\nsmallest_normal\nfloat\nThe smallest positive normal number. See notes.\nresolution\nfloat\nThe approximate decimal resolution of this type, i.e.,10**-precision.\n10**-precision\nNote\nThe constructor oftorch.finfocan be called without argument,\nin which case the class is created for the pytorch default dtype (as returned bytorch.get_default_dtype()).\ntorch.finfo\ntorch.get_default_dtype()\nNote\nsmallest_normalreturns the smallestnormalnumber, but there are smaller\nsubnormal numbers. See https://en.wikipedia.org/wiki/Denormal_number\nfor more information.\nsmallest_normal\n\n## torch.iinfo#\n\nAtorch.iinfois an object that represents the numerical properties of a integertorch.dtype(i.e.torch.uint8,torch.int8,torch.int16,torch.int32, andtorch.int64).\nThis is similar tonumpy.iinfo.\ntorch.iinfo\ntorch.dtype\ntorch.uint8\ntorch.int8\ntorch.int16\ntorch.int32\ntorch.int64\nAtorch.iinfoprovides the following attributes:\ntorch.iinfo\nName\nType\nDescription\nbits\nint\nThe number of bits occupied by the type.\nmax\nint\nThe largest representable number.\nmin\nint\nThe smallest representable number.",
+  "url": "https://pytorch.org/docs/stable/type_info.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

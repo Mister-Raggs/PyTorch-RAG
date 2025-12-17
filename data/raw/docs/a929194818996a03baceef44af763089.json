@@ -1,0 +1,13 @@
+{
+  "doc_id": "a929194818996a03baceef44af763089",
+  "source": "pytorch_docs",
+  "title": "Control Plane \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Control Plane#\n\nCreated On: May 30, 2024 | Last Updated On: Jun 04, 2024\nThis module contains optional helpers that add extra debug and control handlers\ninto your application.\nThis is a context manager that wraps your main entry function. This combines\nthe existingerrors.recordlogic as well as a new_WorkerServerthat\nexposes handlers via a unix socket specified byTorch_WORKER_SERVER_SOCKET.\nerrors.record\n_WorkerServer\nTorch_WORKER_SERVER_SOCKET\nExample\n\n```python\n@worker_main()\ndef main():\n    pass\n\n\nif __name__ == \"__main__\":\n    main()\n\n```\n\nGenerator[None, None, None]",
+  "url": "https://pytorch.org/docs/stable/elastic/control_plane.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

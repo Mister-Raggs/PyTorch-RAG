@@ -1,0 +1,13 @@
+{
+  "doc_id": "ce5d28cb65f22aecb6a9cb152e21d44b",
+  "source": "pytorch_docs",
+  "title": "Quantization \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Quantization#\n\nCreated On: Oct 09, 2019 | Last Updated On: Aug 19, 2025\nWe are cetralizing all quantization related development totorchao, please checkout our new doc page:https://docs.pytorch.org/ao/stable/index.html\nPlan for the existing quantization flows:\n1. Eager mode quantization (torch.ao.quantization.quantize,\ntorch.ao.quantization.quantize_dynamic), please migrate to use torchao eager modequantize_API instead\n2. FX graph mode quantization (torch.ao.quantization.quantize_fx.prepare_fx\ntorch.ao.quantization.quantize_fx.convert_fx, please migrate to use torchao pt2e quantization\nAPI instead (torchao.quantization.pt2e.quantize_pt2e.prepare_pt2e,torchao.quantization.pt2e.quantize_pt2e.convert_pt2e)\n3. pt2e quantization has been migrated to torchao (pytorch/ao)\nseepytorch/ao#2259for more details\nWe plan to deletetorch.ao.quantizationin 2.10 if there are no blockers, or in the earliest PyTorch version until all the blockers are cleared.\n\n## Quantization API Reference (Kept since APIs are still public)#\n\nTheQuantization API Referencecontains documentation\nof quantization APIs, such as quantization passes, quantized tensor operations,\nand supported quantized modules and functions.",
+  "url": "https://pytorch.org/docs/stable/quantization.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

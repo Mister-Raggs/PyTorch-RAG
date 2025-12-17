@@ -1,0 +1,13 @@
+{
+  "doc_id": "f818599bc1df3891c5fe38aedcf4e24d",
+  "source": "pytorch_docs",
+  "title": "Custom Operators \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Custom Operators#\n\nCreated On: Jul 28, 2025 | Last Updated On: Jul 28, 2025\nSummary:\nUse custom operators to havetorch.compiletreat a function as opaque.torch.compilewill never trace into the function and Inductor (the backend) will run the function as-is.\ntorch.compile\ntorch.compile\nYou may wish to use a custom operator in any of the following situations:\nYour code calls some C/C++/CUDA code. Dynamo is a Python bytecode interpreter and generally does not know how to handle calls to C/C++/CUDA functions that are bound to Python.\nDynamo and non-strict tracing have trouble tracing through a function and you want it to be ignored bytorch.compile.\ntorch.compile\nPlease seethe Python custom ops tutorialfor more details on how to wrap a Python function into atorch.compile-understood custom operator.\ntorch.compile\nFor more advanced use cases, you may wish to use our C++ Custom Operator API; please seeherefor more information.",
+  "url": "https://pytorch.org/docs/stable/compile/programming_model.custom_ops.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

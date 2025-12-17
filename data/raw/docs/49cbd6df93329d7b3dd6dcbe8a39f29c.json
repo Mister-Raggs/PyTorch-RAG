@@ -1,0 +1,13 @@
+{
+  "doc_id": "49cbd6df93329d7b3dd6dcbe8a39f29c",
+  "source": "pytorch_docs",
+  "title": "Working with fullgraph=False \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Working withfullgraph=False#\n\nfullgraph=False\nCreated On: Jul 28, 2025 | Last Updated On: Sep 03, 2025\nWhilefullgraph=Falseis the defaulttorch.compilesetting, the semantics of resuming compilation upon encountering a graph break are more complicated.\nYou can find details on thefullgraph=Falsesemantics in the subsections.\nfullgraph=False\ntorch.compile\nfullgraph=False\nThe strategy for usingtorch.compile(fullgraph=False)is as follows:\ntorch.compile(fullgraph=False)\nDetermine the ideal location to placetorch.compile. Normally, it is the highest-level function that doesn\u2019t result in excessive graph breaks.\nFunctions that do a lot of preprocessing or I/O operations are examples of functions that result in many graph breaks and do not significantly benefit fromtorch.compile.\na. You can isolate issues by first compiling individual functions/modules before compiling entire models.\ntorch.compile\ntorch.compile\nApplytorch.compiler.disableto functions in the compiled region that result in a lot of graph breaks\nand do not benefit from compilation. In this case, one graph break is better than potentially tens or hundreds.\ntorch.compiler.disable\nUseTORCH_LOGS=\"graph_breaks\"or tlparse to investigate remaining graph breaks.Work around these graph breaks using the same approaches as working around graph breaks under\nthefullgraph=Trueprogramming model. Not all graph breaks need to be removed - some may\nimpact performance more than others. The general rule is to focus on graph breaks that are happening during model computation.\na. We recommend usingtorch.compile(backend='eager')when debugging graph breaks, for faster debugging iteration times\nTORCH_LOGS=\"graph_breaks\"\nfullgraph=True\ntorch.compile(backend='eager')\ncompile(model)\nmodel.compile()\nerror_on_graph_break\nerror_on_graph_break(False)\nerror_on_graph_break(True)\nerror_on_graph_break\nfullgraph\nfullgraph=True/False\nerror_on_graph_break",
+  "url": "https://pytorch.org/docs/stable/compile/programming_model.fullgraph_false.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

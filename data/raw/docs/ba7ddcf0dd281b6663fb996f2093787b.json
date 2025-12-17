@@ -1,0 +1,13 @@
+{
+  "doc_id": "ba7ddcf0dd281b6663fb996f2093787b",
+  "source": "pytorch_docs",
+  "title": "Train script \u2014 PyTorch 2.9 documentation",
+  "text": "\n## Train script#\n\nCreated On: May 04, 2021 | Last Updated On: Feb 09, 2023\nIf your train script works withtorch.distributed.launchit will continue\nworking withtorchrunwith these differences:\ntorch.distributed.launch\ntorchrun\nNo need to manually passRANK,WORLD_SIZE,MASTER_ADDR, andMASTER_PORT.\nRANK\nWORLD_SIZE\nMASTER_ADDR\nMASTER_PORT\nrdzv_backendandrdzv_endpointcan be provided. For most users\nthis will be set toc10d(seerendezvous). The defaultrdzv_backendcreates a non-elastic rendezvous whererdzv_endpointholds\nthe master address.\nrdzv_backend\nrdzv_endpoint\nc10d\nrdzv_backend\nrdzv_endpoint\nMake sure you have aload_checkpoint(path)andsave_checkpoint(path)logic in your script. When any number of\nworkers fail we restart all the workers with the same program\narguments so you will lose progress up to the most recent checkpoint\n(seeelastic launch).\nload_checkpoint(path)\nsave_checkpoint(path)\nuse_envflag has been removed. If you were parsing local rank by parsing\nthe--local-rankoption, you need to get the local rank from the\nenvironment variableLOCAL_RANK(e.g.int(os.environ[\"LOCAL_RANK\"])).\nuse_env\n--local-rank\nLOCAL_RANK\nint(os.environ[\"LOCAL_RANK\"])\nBelow is an expository example of a training script that checkpoints on each\nepoch, hence the worst-case progress lost on failure is one full epoch worth\nof training.\n\n```python\ndef main():\n     args = parse_args(sys.argv[1:])\n     state = load_checkpoint(args.checkpoint_path)\n     initialize(state)\n\n     # torch.distributed.run ensures that this will work\n     # by exporting all the env vars needed to initialize the process group\n     torch.distributed.init_process_group(backend=args.backend)\n\n     for i in range(state.epoch, state.total_num_epochs)\n          for batch in iter(state.dataset)\n              train(batch, state.model)\n\n          state.epoch += 1\n          save_checkpoint(state)\n\n```\n\nFor concrete examples of torchelastic-compliant train scripts, visit\nourexamplespage.",
+  "url": "https://pytorch.org/docs/stable/elastic/train_script.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

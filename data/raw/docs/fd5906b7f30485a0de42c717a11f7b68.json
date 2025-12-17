@@ -1,0 +1,13 @@
+{
+  "doc_id": "fd5906b7f30485a0de42c717a11f7b68",
+  "source": "pytorch_docs",
+  "title": "python.object-model \u2014 PyTorch 2.9 documentation",
+  "text": "\n## python.object-model#\n\n\n## model_attr_mutation#\n\nNote\nTags:python.object-model\nSupport Level: NOT_SUPPORTED_YET\nOriginal source code:\n\n```python\n# mypy: allow-untyped-defs\nimport torch\nfrom torch._export.db.case import SupportLevel\n\n\nclass ModelAttrMutation(torch.nn.Module):\n    \"\"\"\n    Attribute mutation is not supported.\n    \"\"\"\n\n    def __init__(self) -> None:\n        super().__init__()\n        self.attr_list = [torch.randn(3, 2), torch.randn(3, 2)]\n\n    def recreate_list(self):\n        return [torch.zeros(3, 2), torch.zeros(3, 2)]\n\n    def forward(self, x):\n        self.attr_list = self.recreate_list()\n        return x.sum() + self.attr_list[0].sum()\n\n\nexample_args = (torch.randn(3, 2),)\ntags = {\"python.object-model\"}\nsupport_level = SupportLevel.NOT_SUPPORTED_YET\nmodel = ModelAttrMutation()\n\n\ntorch.export.export(model, example_args)\n\n```\n\nResult:\n\n```python\nAssertionError: Mutating module attribute attr_list during export.\n\n```\n\n\n## optional_input#\n\nNote\nTags:python.object-model\nSupport Level: NOT_SUPPORTED_YET\nOriginal source code:\n\n```python\n# mypy: allow-untyped-defs\nimport torch\nfrom torch._export.db.case import SupportLevel\n\n\nclass OptionalInput(torch.nn.Module):\n    \"\"\"\n    Tracing through optional input is not supported yet\n    \"\"\"\n\n    def forward(self, x, y=torch.randn(2, 3)):\n        if y is not None:\n            return x + y\n        return x\n\n\nexample_args = (torch.randn(2, 3),)\ntags = {\"python.object-model\"}\nsupport_level = SupportLevel.NOT_SUPPORTED_YET\nmodel = OptionalInput()\n\n\ntorch.export.export(model, example_args)\n\n```\n\nResult:\n\n```python\nUnsupported: Tracing through optional input is not supported yet\n\n```\n",
+  "url": "https://pytorch.org/docs/stable/generated/exportdb/python.object-model.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

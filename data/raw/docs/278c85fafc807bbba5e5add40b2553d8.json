@@ -1,0 +1,13 @@
+{
+  "doc_id": "278c85fafc807bbba5e5add40b2553d8",
+  "source": "pytorch_docs",
+  "title": "torch.operator \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.operator#\n\n\n## unsupported_operator#\n\nNote\nTags:torch.operator\nSupport Level: NOT_SUPPORTED_YET\nOriginal source code:\n\n```python\n# mypy: allow-untyped-defs\nimport torch\nfrom torch._export.db.case import SupportLevel\n\n\nclass TorchSymMin(torch.nn.Module):\n    \"\"\"\n    torch.sym_min operator is not supported in export.\n    \"\"\"\n\n    def forward(self, x):\n        return x.sum() + torch.sym_min(x.size(0), 100)\n\n\nexample_args = (torch.randn(3, 2),)\ntags = {\"torch.operator\"}\nsupport_level = SupportLevel.NOT_SUPPORTED_YET\nmodel = TorchSymMin()\n\n\ntorch.export.export(model, example_args)\n\n```\n\nResult:\n\n```python\nUnsupported: torch.* op returned non-Tensor\n\n```\n",
+  "url": "https://pytorch.org/docs/stable/generated/exportdb/torch.operator.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

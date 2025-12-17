@@ -1,0 +1,13 @@
+{
+  "doc_id": "b3dbd2c080b85ee8ef05a91eb68fbe12",
+  "source": "pytorch_docs",
+  "title": "JIT Utils - torch.utils.jit \u2014 PyTorch 2.9 documentation",
+  "text": "\n## JIT Utils - torch.utils.jit#\n\nCreated On: Jun 26, 2025 | Last Updated On: Jun 26, 2025",
+  "url": "https://pytorch.org/docs/stable/jit_utils.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

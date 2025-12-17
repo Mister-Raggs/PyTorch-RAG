@@ -1,0 +1,13 @@
+{
+  "doc_id": "d94451546a64c308d3423e80cf998293",
+  "source": "pytorch_docs",
+  "title": "NUMA Binding Utilities \u2014 PyTorch 2.9 documentation",
+  "text": "\n## NUMA Binding Utilities#\n\nCreated On: Jul 25, 2025 | Last Updated On: Aug 12, 2025\nSee behavior description for each affinity mode\nin torch.distributed.run.\nIf true, we will fall back to using the original command/entrypoint if we fail to compute\nor apply NUMA bindings.\nYou should avoid using this option! It is only intended as a safety mechanism for facilitating\nmass rollouts of numa binding.\n1. Applies NUMA binding to the current thread, suitable for the thread\nwhich will be interacting with GPU gpu_index.\n2. Resets to the original CPU affinity before exiting the context manager.\nIterator[None]",
+  "url": "https://pytorch.org/docs/stable/elastic/numa.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

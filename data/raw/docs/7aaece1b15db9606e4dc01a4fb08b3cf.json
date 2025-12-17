@@ -1,0 +1,13 @@
+{
+  "doc_id": "7aaece1b15db9606e4dc01a4fb08b3cf",
+  "source": "pytorch_docs",
+  "title": "torch.utils.model_zoo \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.utils.model_zoo#\n\nCreated On: Jan 09, 2017 | Last Updated On: Jun 11, 2025\nMoved totorch.hub.\ntorch.hub\nLoads the Torch serialized object at the given URL.\nIf downloaded file is a zip file, it will be automatically\ndecompressed.\nIf the object is already present inmodel_dir, it\u2019s deserialized and\nreturned.\nThe default value ofmodel_diris<hub_dir>/checkpointswherehub_diris the directory returned byget_dir().\nmodel_dir\n<hub_dir>/checkpoints\nhub_dir\nget_dir()\nurl(str) \u2013 URL of the object to download\nmodel_dir(str,optional) \u2013 directory in which to save the object\nmap_location(optional) \u2013 a function or a dict specifying how to remap storage locations (see torch.load)\nprogress(bool,optional) \u2013 whether or not to display a progress bar to stderr.\nDefault: True\ncheck_hash(bool,optional) \u2013 If True, the filename part of the URL should follow the naming conventionfilename-<sha256>.extwhere<sha256>is the first eight or more\ndigits of the SHA256 hash of the contents of the file. The hash is used to\nensure unique names and to verify the contents of the file.\nDefault: False\nfilename-<sha256>.ext\n<sha256>\nfile_name(str,optional) \u2013 name for the downloaded file. Filename fromurlwill be used if not set.\nurl\nweights_only(bool,optional) \u2013 If True, only weights will be loaded and no complex pickled objects.\nRecommended for untrusted sources. Seeload()for more details.\nload()\ndict[str,Any]\nExample\n\n```python\n>>> state_dict = torch.hub.load_state_dict_from_url(\n...     \"https://s3.amazonaws.com/pytorch/models/resnet18-5c106cde.pth\"\n... )\n\n```\n",
+  "url": "https://pytorch.org/docs/stable/model_zoo.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

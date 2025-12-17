@@ -1,0 +1,13 @@
+{
+  "doc_id": "927edc293273a0f549add6adf66b326a",
+  "source": "pytorch_docs",
+  "title": "torch.random \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.random#\n\nCreated On: Aug 07, 2019 | Last Updated On: Jun 18, 2025\nForks the RNG, so that when you return, the RNG is reset\nto the state that it was previously in.\ndevices(iterableofDevice IDs) \u2013 devices for which to fork\nthe RNG. CPU RNG state is always forked. By default,fork_rng()operates\non all devices, but will emit a warning if your machine has a lot\nof devices, since this function will run very slowly in that case.\nIf you explicitly specify devices, this warning will be suppressed\nfork_rng()\nenabled(bool) \u2013 ifFalse, the RNG is not forked.  This is a convenience\nargument for easily disabling the context manager without having\nto delete it and unindent your Python code under it.\nFalse\ndevice_type(str) \u2013 device type str, default iscuda. As for supported device,\nsee details inaccelerator\nGenerator\nReturns the random number generator state as atorch.ByteTensor.\nNote\nThe returned state is for the default generator on CPU only.\nSee also:torch.random.fork_rng().\ntorch.random.fork_rng()\nTensor\nReturns the initial seed for generating random numbers as a\nPythonlong.\nNote\nThe returned seed is for the default generator on CPU only.\nint\nSets the seed for generating random numbers on all devices. Returns atorch.Generatorobject.\nseed(int) \u2013 The desired seed. Value must be within the inclusive range[-0x8000_0000_0000_0000, 0xffff_ffff_ffff_ffff]. Otherwise, a RuntimeError\nis raised. Negative inputs are remapped to positive values with the formula0xffff_ffff_ffff_ffff + seed.\nGenerator\n\nSets the seed for generating random numbers to a non-deterministic\nrandom number on all devices. Returns a 64 bit number used to seed the RNG.\nint\nSets the random number generator state.\nNote\nThis function only works for CPU. For CUDA, please usetorch.manual_seed(), which works for both CPU and CUDA.\ntorch.manual_seed()\nnew_state(torch.ByteTensor) \u2013 The desired state",
+  "url": "https://pytorch.org/docs/stable/random.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

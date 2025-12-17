@@ -1,0 +1,13 @@
+{
+  "doc_id": "2dd340842e0dafc7b8929040f5b44127",
+  "source": "pytorch_docs",
+  "title": "torch.compile Programming Model \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.compile Programming Model#\n\nCreated On: Jul 28, 2025 | Last Updated On: Jul 29, 2025\nThetorch.compileprogramming model:\ntorch.compile\nClarifies some internal behaviors oftorch.compileso that one can better predict compiler behavior on user code and\ntorch.compile\nProvides ways for one to take more fine-grained control overtorch.compile.\ntorch.compile\nBy understanding thetorch.compileprogramming model, one can systematically unblock themselves when encountering issues withtorch.compile.\ntorch.compile\ntorch.compile\nfullgraph=True\ntorch._dynamo.nonstrict_trace\nfullgraph=False\ncompile(model)\nmodel.compile()\nerror_on_graph_break\nerror_on_graph_break(False)\nerror_on_graph_break(True)\nerror_on_graph_break\nfullgraph\nfullgraph=True/False\nerror_on_graph_break",
+  "url": "https://pytorch.org/docs/stable/compile/programming_model.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

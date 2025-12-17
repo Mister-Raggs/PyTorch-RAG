@@ -1,0 +1,13 @@
+{
+  "doc_id": "e0a01e4be2726810d4144c3ce04b9d42",
+  "source": "pytorch_docs",
+  "title": "torch.mtia.memory \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.mtia.memory#\n\nCreated On: Dec 09, 2024 | Last Updated On: Jul 28, 2025\nThe MTIA backend is implemented out of the tree, only interfaces are be defined here.\nThis package adds support for device memory management implemented in MTIA.\nmemory_stats\n\nmemory_stats\nReturn a dictionary of MTIA memory allocator statistics for a given device.\nmemory_allocated\n\nmemory_allocated\nReturn the current MTIA memory occupied by tensors in bytes for a given device.",
+  "url": "https://pytorch.org/docs/stable/mtia.memory.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}

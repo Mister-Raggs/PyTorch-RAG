@@ -1,0 +1,13 @@
+{
+  "doc_id": "3397f590061a692c3b07c2343248f8b9",
+  "source": "pytorch_docs",
+  "title": "torch.nn.attention \u2014 PyTorch 2.9 documentation",
+  "text": "\n## torch.nn.attention#\n\nCreated On: Jan 24, 2024 | Last Updated On: Oct 29, 2024\nThis module contains functions and classes that alter the behavior of torch.nn.functional.scaled_dot_product_attention\n\n## Utils#\n\nsdpa_kernel\n\nsdpa_kernel\nContext manager to select which backend to use for scaled dot product attention.\nSDPBackend\n\nSDPBackend\nAn enum-like class that contains the different backends for scaled dot product attention.\n\n## Submodules#\n\nflex_attention\nflex_attention\nThis module implements the user facing API for flex_attention in PyTorch.\nbias\nbias\nDefines bias subclasses that work with scaled_dot_product_attention\nexperimental\nexperimental\n",
+  "url": "https://pytorch.org/docs/stable/nn.attention.html",
+  "metadata": {
+    "section": null,
+    "issue_number": null,
+    "labels": null,
+    "answer_author": null
+  }
+}
