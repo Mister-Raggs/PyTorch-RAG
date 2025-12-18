@@ -3,6 +3,7 @@ import os
 import json
 import time
 import hashlib
+from dotenv import load_dotenv
 
 OWNER = "pytorch"
 REPO = "pytorch"
@@ -11,8 +12,9 @@ OUTPUT_DIR = "data/raw/issues"
 
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
+load_dotenv()
 HEADERS = {
-    "Authorization": f"token {os.environ.get('GITHUB_TOKEN')}",
+    "Authorization": f"token {os.environ['GITHUB_TOKEN']}",
     "Accept": "application/vnd.github+json"
 }
 
@@ -50,40 +52,49 @@ def get_comments(comments_url):
 
 
 def extract_best_answer(comments):
-    for c in comments:
-        if c["author_association"] in ["MEMBER", "COLLABORATOR"]:
-            return c["body"], c["user"]["login"]
-    return None, None
+    if not comments:
+        return None, None
+
+    # Take the LAST non-bot comment
+    for c in reversed(comments):
+        body = c["body"].strip()
+        if len(body) > 50:
+            return body, c["user"]["login"]
+
+    # fallback: longest comment
+    best = max(comments, key=lambda c: len(c["body"].strip()))
+    return best["body"], best["user"]["login"]
+
 
 
 if __name__ == "__main__":
     for label in LABELS:
         issues = get_issues(label)
-
         for issue in issues:
-            if "pull_request" in issue:
-                continue
+          if "pull_request" in issue and issue["comments"] == 0:
+              continue
 
-            comments = get_comments(issue["comments_url"])
-            answer, author = extract_best_answer(comments)
+          comments = get_comments(issue["comments_url"])
+          answer, author = extract_best_answer(comments)
 
-            if not answer:
-                continue
+          if not answer:
+              continue
 
-            doc = {
-                "doc_id": issue_to_id(issue["number"]),
-                "source": "github_issue",
-                "title": issue["title"],
-                "text": f"Question:\n{issue['body']}\n\nAnswer:\n{answer}",
-                "url": issue["html_url"],
-                "metadata": {
-                    "section": None,
-                    "issue_number": issue["number"],
-                    "labels": [l["name"] for l in issue["labels"]],
-                    "answer_author": author
-                }
-            }
+          doc = {
+              "doc_id": issue_to_id(issue["number"]),
+              "source": "github_issue",
+              "title": issue["title"],
+              "text": f"Question:\n{issue['body']}\n\nAnswer:\n{answer}",
+              "url": issue["html_url"],
+              "metadata": {
+                  "section": None,
+                  "issue_number": issue["number"],
+                  "labels": [l["name"] for l in issue["labels"]],
+                  "answer_author": author
+              }
+          }
 
-            out_path = os.path.join(OUTPUT_DIR, f"{doc['doc_id']}.json")
-            with open(out_path, "w") as f:
-                json.dump(doc, f, indent=2)
+          out_path = os.path.join(OUTPUT_DIR, f"{doc['doc_id']}.json")
+          with open(out_path, "w") as f:
+              json.dump(doc, f, indent=2)
+
